@@ -28,7 +28,7 @@ export default class Header extends Component {
     render() {
         return (
             <Router>
-            <Navbar fixed="top" collapseOnSelect expand="md" className="d-block" bg="dark" variant="dark">
+            <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">
                        <img
@@ -41,7 +41,7 @@ export default class Header extends Component {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-between">
-                        <Nav claccName="me-auto">
+                        <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/about">About us</Nav.Link>
                             <Nav.Link href="/contacts">Contacts</Nav.Link>
