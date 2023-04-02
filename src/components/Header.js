@@ -7,14 +7,28 @@ import {
     Form,
     Button
 } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link,
+  useRouteMatch,
+  useParams,
+} from 'react-router-dom';
+import Home from '../pages/Home';
+import Contacts from '../pages/Contacts';
+import About from '../pages/About';
+import Blog from '../pages/Blog';
+
 
 import logo from "../static/logo192.png";
 
 export default class Header extends Component {
     render() {
         return (
-            <>
-            <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark">
+            <Router>
+            <Navbar fixed="top" collapseOnSelect expand="md" className="d-block" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">
                        <img
@@ -44,7 +58,17 @@ export default class Header extends Component {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            </>
+            <main>
+                <Container>
+                    <Routes>
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route path="/contacts" element={<Contacts/>}/>
+                        <Route path="/blog" element={<Blog/>}/>
+                    </Routes>
+                </Container>
+            </main>
+            </Router>
         )
     }
 }
